@@ -95,9 +95,10 @@ export const AddUsers = () => {
             value={status}
             onChange={e => setStatus(e.target.value)}
             >
-                <option>Client</option>
-                <option>Partner</option>
-                <option>Admin</option>
+                <option value=''>Select...</option>
+                <option value='Client'>Client</option>
+                <option value='Partner'>Partner</option>
+                <option value='Admin'>Admin</option>
             </select>
         </div>
         <button 
