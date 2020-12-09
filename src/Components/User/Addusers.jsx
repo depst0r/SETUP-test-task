@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
 import modules from './Users.module.css'
 
 export const AddUsers = () => {
@@ -11,7 +10,11 @@ export const AddUsers = () => {
     const [status, setStatus] = useState('')
     const [arr, setArr] = useState([])
 
-    const { register, handleSubmit } = useForm()
+    const [emailErr, setEmailErr] = useState({})
+    const [passErr, setPassErr] = useState({})
+    const [phoneErr, setPhoneErr] = useState({})
+    const [fullNameErr, setFullNameErr] = useState({})
+    const [statusErr, setStatusErr] = useState({})
 
     useEffect(() => {
         const usersArr = localStorage.getItem('users') || []
@@ -24,6 +27,11 @@ export const AddUsers = () => {
 
     const handlerForm = e => {
         e.preventDefault()
+        const isValidate = formValidate()
+    }
+
+    const formValidate = () => {
+
     }
 
     const onSubmit = () => {
@@ -41,7 +49,7 @@ export const AddUsers = () => {
 
     return<>
         <div className="row">
-        <form onSubmit={handleSubmit(handlerForm)} className={modules.ma}>
+        <form onSubmit={handlerForm} className={modules.ma}>
         <div className="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input 
