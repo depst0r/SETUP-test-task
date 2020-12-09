@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useForm } from 'react-hook-form'
 import modules from './Users.module.css'
 
 export const AddUsers = () => {
@@ -9,12 +10,6 @@ export const AddUsers = () => {
     const [fullName, setFullName] = useState('')
     const [status, setStatus] = useState('')
     const [arr, setArr] = useState([])
-
-    const [emailErr, setEmailErr] = useState({})
-    const [passErr, setPassErr] = useState({})
-    const [phoneErr, setPhoneErr] = useState({})
-    const [fullNameErr, setFullNameErr] = useState({})
-    const [statusErr, setStatusErr] = useState({})
 
     useEffect(() => {
         const usersArr = localStorage.getItem('users') || []
@@ -27,12 +22,9 @@ export const AddUsers = () => {
 
     const handlerForm = e => {
         e.preventDefault()
-        const isValidate = formValidate()
     }
 
-    const formValidate = () => {
-
-    }
+    const { register, handleSubmit, watch, errors } = useForm()
 
     const onSubmit = () => {
         setArr(state => state.concat({ 
