@@ -10,6 +10,7 @@ export const AddUsers = () => {
     const [status, setStatus] = useState('')
     const [arr, setArr] = useState([])
 
+
     useEffect(() => {
         const usersArr = localStorage.getItem('users') || []
         setArr(JSON.parse(usersArr))
@@ -34,6 +35,7 @@ export const AddUsers = () => {
             status: status
         }))
     }
+
 
     return<>
         <div className="row">
