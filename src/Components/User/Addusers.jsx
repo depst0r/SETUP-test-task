@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useForm } from 'react-hook-form'
 import modules from './Users.module.css'
 
 export const AddUsers = () => {
@@ -10,6 +11,7 @@ export const AddUsers = () => {
     const [status, setStatus] = useState('')
     const [arr, setArr] = useState([])
 
+    const { register, handleSubmit } = useForm()
 
     useEffect(() => {
         const usersArr = localStorage.getItem('users') || []
@@ -39,7 +41,7 @@ export const AddUsers = () => {
 
     return<>
         <div className="row">
-        <form onSubmit={handlerForm} className={modules.ma}>
+        <form onSubmit={handleSubmit(handlerForm)} className={modules.ma}>
         <div className="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input 
@@ -48,7 +50,10 @@ export const AddUsers = () => {
             aria-describedby="emailHelp"
             value={email}
             onChange={e => setEmail(e.target.value)}
+            name='email'
+            ref={register({ required: true, minLength: 2 })}
             />
+            {email && <p>Hello</p>}
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
@@ -58,6 +63,7 @@ export const AddUsers = () => {
             id="exampleInputPassword1"
             value={pass}
             onChange={e => setPass(e.target.value)}
+            name='password'
             />
         </div>
         <div class="form-group">
@@ -68,6 +74,7 @@ export const AddUsers = () => {
             id="exampleInputPhone"
             value={phone}
             onChange={e => setPhone(e.target.value)}
+            name='phone'
             />
         </div>
         <div class="form-group">
@@ -78,6 +85,7 @@ export const AddUsers = () => {
             id="exampleInputUserFullName"
             value={fullName}
             onChange={e => setFullName(e.target.value)}
+            name='fullName'
             />
         </div>
         <div className="form-group">
