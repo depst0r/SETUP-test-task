@@ -9,12 +9,6 @@ export const AddUsers = () => {
     const [fullName, setFullName] = useState('')
     const [status, setStatus] = useState('')
     const [arr, setArr] = useState([])
-    const [errors, setErrors] = useState({
-        emailErr: '',
-        passErr: '',
-        phoneErr: '',
-        fullNameErr: ''
-    })
 
     useEffect(() => {
         const usersArr = localStorage.getItem('users') || []
@@ -26,7 +20,7 @@ export const AddUsers = () => {
     }, [arr])
 
     const handlerForm = e => {
-        e.preventDefault()
+        e.preventDefault()  
     }
 
     const onSubmit = () => {

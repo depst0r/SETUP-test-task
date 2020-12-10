@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="container">
       <Header/>
-      <Route path='/' component={ HomePage } />
-      <Route path='/add-users' component={ AddUsers } />
-      <Route path='/users-list' component={ UserList } />
-      <Route path='/user-edit' component={ EditUsers } />
+        <Route exact path='/' component={ HomePage } />
+        <Route path='/add-users' component={ AddUsers } />
+        <Route path='/users-list' component={ UserList } />
+        <Route path='/user-edit' component={ EditUsers } />
     </div> 
   )
 }

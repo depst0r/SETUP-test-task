@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { HomePage } from '../HomePage/HomePage'
-import { Link } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
+import { EditUsers } from '../EditUsers/EditUser'
 
 
 export const UserList = () => {
@@ -27,9 +28,9 @@ const removeUser = index => {
 }
 
 const editUser = index => {
-    const edit = JSON.parse(localStorage.getItem('users'))
     console.log(index);
 }
+
 
 const userItems = user.map(res => res)
 

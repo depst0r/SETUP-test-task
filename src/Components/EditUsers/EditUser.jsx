@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useParams } from 'react'
 import { Link } from 'react-router-dom'
 
-export const EditUsers = () => {
+export const EditUsers = () => {;
+
     return<>
         <div className="row">
             <form>
