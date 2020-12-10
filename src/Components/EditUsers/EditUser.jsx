@@ -14,7 +14,7 @@ export const EditUsers = () => {
         const obj = JSON.parse(localStorage.getItem('users'))
         setUserEdit(obj)
         const t = obj.map(res => res.id)
-        const res = t.filter(r => r == id)
+        const res = t.filter(r => r === id)
         console.log(res)
     }
 
