@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState ,useEffect } from 'react'
 import './EditUsers.css'
 import { Link, useParams } from 'react-router-dom'
 
 export const EditUsers = () => {
     const { id } = useParams('')
+    const [userEdit, setUserEdit] = useState('')
 
-    console.log('id', id);
+    useEffect(() => {
+        handleLocalStorage()
+    }, [])
+
+    const handleLocalStorage = () => {
+        const obj = JSON.parse(localStorage.getItem('users'))
+        setUserEdit(obj)
+        const t = obj.map(res => res.id)
+        const res = t.filter(r => r == id)
+        console.log(res)
+    }
+
     return<>
     
         <div className="row">

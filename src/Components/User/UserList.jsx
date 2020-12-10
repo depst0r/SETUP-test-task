@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { HomePage } from '../HomePage/HomePage'
 import { Link } from 'react-router-dom'
-import { EditUsers } from '../EditUsers/EditUser'
 
 
 export const UserList = () => {
