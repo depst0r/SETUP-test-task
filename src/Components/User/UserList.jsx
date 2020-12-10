@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { HomePage } from '../HomePage/HomePage'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { EditUsers } from '../EditUsers/EditUser'
 
 
@@ -27,8 +27,8 @@ const removeUser = index => {
     setUsers(removeState)
 }
 
-const editUser = index => {
-    console.log(index);
+const editUser = () => {
+
 }
 
 
@@ -62,9 +62,9 @@ return<>
           <button 
           type="button" 
             className="btn btn-warning"
-            onClick={editUser} 
+            // onClick={editUser} 
             >
-                <Link to='/user-edit' style={{textDecoration: 'none', color: 'white'}}>
+                <Link to={`/user-edit/${res.id}`} style={{textDecoration: 'none', color: 'white'}}>
                     Edit
                 </Link>
             </button>
