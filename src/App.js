@@ -15,7 +15,7 @@ function App() {
           <Route exact path='/' component={ HomePage } />
           <Route path='/add-users' component={ AddUsers } />
           <Route path='/users-list' component={ UserList } />
-          <Route path='/user-edit' component={ EditUsers } />
+          <Route path='/user-edit/:id' component={ EditUsers } />
         </Switch>
     </div> 
   )

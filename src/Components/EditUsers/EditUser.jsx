@@ -3,7 +3,7 @@ import './EditUsers.css'
 import { Link, useParams } from 'react-router-dom'
 
 export const EditUsers = () => {
-    const {id} = useParams('')
+    const { id } = useParams('')
 
     console.log('id', id);
     return<>
