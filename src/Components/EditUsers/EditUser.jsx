@@ -16,6 +16,8 @@ export const EditUsers = () => {
         setUserEdit(edit)
     }
 
+    const { fullName, email, pass, phone, status } = userEdit
+
     return<>    
         <div className="row">
             <div className="form">
@@ -23,28 +25,26 @@ export const EditUsers = () => {
             <fieldset disabled>
             <div className="form-group">
                 <label for="exampleInputFullName">Full Name</label>
-                <input type="email" class="form-control" id="exampleInputFullName" aria-describedby="emailHelp" placeholder="Enter email"/>
+                <input type="email" class="form-control" id="exampleInputFullName" aria-describedby="emailHelp" value={fullName}/>
             </div>
             </fieldset>
             <div className="form-group">
                 <label for="exampleInputEmail">Email</label>
-                <input type="password" class="form-control" id="exampleInputEmail" />
+                <input type="email" class="form-control" id="exampleInputEmail" value={email}/>
             </div>
             <div className="form-group">
                 <label for="exampleInputPassword">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword" />
+                <input type="text" class="form-control" id="exampleInputPassword" value={pass}/>
             </div>
             <div className="form-group">
                 <label for="exampleInputPhone">Phone</label>
-                <input type="password" class="form-control" id="exampleInputPhone" />
+                <input type="phone" class="form-control" id="exampleInputPhone" value={phone}/>
             </div>
             <fieldset disabled>
             <select 
             className="form-control form-control-lg"
             >
-                <option>Client</option>
-                <option>Partner</option>
-                <option>Admin</option>
+                <option>{status}</option>
             </select>
             </fieldset>
             <button 
