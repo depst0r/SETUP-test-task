@@ -17,10 +17,11 @@ export const EditUsers = () => {
         setUserEdit(edit)
     }
 
-
     const onSubmite = e => {
         e.preventDefault()
     }
+
+    console.log(userEdit);
 
     const { fullName, email, pass, phone, status } = userEdit
 
@@ -35,7 +36,7 @@ export const EditUsers = () => {
                 type="email" 
                 className="form-control" 
                 id="exampleInputFullName" 
-                aria-describedby="emailHelp" 
+                aria-describedby="emailHelp"
                 value={fullName}
                 />
             </div>
@@ -46,9 +47,7 @@ export const EditUsers = () => {
                 type="email" 
                 className="form-control" 
                 id="exampleInputEmail"
-                onChange={e => setUserEdit({
-                    email: e.target.value
-                })}
+                onChange={e => setUserEdit({...userEdit, email: e.target.value })}
                 value={email}/>
             </div>
             <div className="form-group">
@@ -57,9 +56,7 @@ export const EditUsers = () => {
                 type="text" 
                 className="form-control" 
                 id="exampleInputPassword"
-                onChange={e => setUserEdit({
-                    pass: e.target.value
-                })} 
+                onChange={e => setUserEdit({...userEdit, pass: e.target.value })}
                 value={pass}/>
             </div>
             <div className="form-group">
@@ -68,9 +65,7 @@ export const EditUsers = () => {
                 type="phone" 
                 className="form-control" 
                 id="exampleInputPhone"
-                onChange={e => setUserEdit({
-                    phone: e.target.value
-                })} 
+                onChange={e => setUserEdit({...userEdit, phone: e.target.value })}
                 value={phone}/>
             </div>
             <fieldset disabled>
@@ -81,7 +76,7 @@ export const EditUsers = () => {
             </select>
             </fieldset>
                 <button 
-                    type="submit" 
+                    // type="submit" 
                     className="btn btn-primary m-3"
                     >Save</button>
                     <button 
