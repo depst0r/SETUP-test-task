@@ -36,7 +36,7 @@ const userItems = user.map(res => res)
 return<>
     <div className="row">
         <>
-        <table class="table table-hover table-dark">
+        <table className="table table-hover table-dark">
   <thead>
     <tr>
       <th scope="col">Date</th>
@@ -50,7 +50,7 @@ return<>
   <tbody>
       {userItems ? userItems.map(res => {
          return (
-              <tr>
+              <tr key={res.id}>
           <th scope="row">{res.registrationDate}</th>
           <td>{res.fullName}</td>
           <td>{res.email}</td>
