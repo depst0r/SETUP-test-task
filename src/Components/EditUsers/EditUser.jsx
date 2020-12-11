@@ -41,6 +41,7 @@ export const EditUsers = () => {
                 <label for="exampleInputPhone">Phone</label>
                 <input type="password" class="form-control" id="exampleInputPhone" />
             </div>
+            <fieldset disabled>
             <select 
             className="form-control form-control-lg"
             >
@@ -48,6 +49,7 @@ export const EditUsers = () => {
                 <option>Partner</option>
                 <option>Admin</option>
             </select>
+            </fieldset>
             <button 
             type="submit" 
             class="btn btn-primary m-3"
