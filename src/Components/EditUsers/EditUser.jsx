@@ -17,6 +17,7 @@ export const EditUsers = () => {
         setUserEdit(edit)
     }
 
+
     const onSubmite = e => {
         e.preventDefault()
     }
@@ -30,20 +31,47 @@ export const EditUsers = () => {
             <fieldset disabled>
             <div className="form-group">
                 <label for="exampleInputFullName">Full Name</label>
-                <input type="email" class="form-control" id="exampleInputFullName" aria-describedby="emailHelp" value={fullName}/>
+                <input 
+                type="email" 
+                className="form-control" 
+                id="exampleInputFullName" 
+                aria-describedby="emailHelp" 
+                value={fullName}
+                />
             </div>
             </fieldset>
             <div className="form-group">
                 <label for="exampleInputEmail">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail" value={email}/>
+                <input 
+                type="email" 
+                className="form-control" 
+                id="exampleInputEmail"
+                onChange={e => setUserEdit({
+                    email: e.target.value
+                })}
+                value={email}/>
             </div>
             <div className="form-group">
                 <label for="exampleInputPassword">Password</label>
-                <input type="text" class="form-control" id="exampleInputPassword" value={pass}/>
+                <input 
+                type="text" 
+                className="form-control" 
+                id="exampleInputPassword"
+                onChange={e => setUserEdit({
+                    pass: e.target.value
+                })} 
+                value={pass}/>
             </div>
             <div className="form-group">
                 <label for="exampleInputPhone">Phone</label>
-                <input type="phone" class="form-control" id="exampleInputPhone" value={phone}/>
+                <input 
+                type="phone" 
+                className="form-control" 
+                id="exampleInputPhone"
+                onChange={e => setUserEdit({
+                    phone: e.target.value
+                })} 
+                value={phone}/>
             </div>
             <fieldset disabled>
             <select 
@@ -54,11 +82,11 @@ export const EditUsers = () => {
             </fieldset>
                 <button 
                     type="submit" 
-                    class="btn btn-primary m-3"
+                    className="btn btn-primary m-3"
                     >Save</button>
                     <button 
                     type="submit" 
-                    class="btn btn-danger"
+                    className="btn btn-danger"
                 >
                 <Link to='/users-list' style={{textDecoration: 'none', color: 'white'}}>
                 Back
