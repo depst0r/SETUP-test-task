@@ -5,7 +5,7 @@ import './EditUsers.css'
 
 export const EditUsers = () => {
     const { id } = useParams('')
-    const [userEdit, setUserEdit] = useState({})
+    const [userEdit, setUserEdit] = useState([])
 
     useEffect(() => {
         handleLocalStorage()
@@ -15,6 +15,10 @@ export const EditUsers = () => {
         const obj = JSON.parse(localStorage.getItem('users'))
         const edit = obj.find(item => item.id == id)
         setUserEdit(edit)
+    }
+
+    const handlSubmit = () => {
+        localStorage.setItem('users', JSON.stringify([userEdit]))
     }
 
     const onSubmite = e => {
@@ -76,7 +80,7 @@ export const EditUsers = () => {
             </select>
             </fieldset>
                 <button 
-                    // type="submit" 
+                    onClick={handlSubmit}
                     className="btn btn-primary m-3"
                     >Save</button>
                     <button 

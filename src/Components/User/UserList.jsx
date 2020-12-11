@@ -26,10 +26,6 @@ const removeUser = index => {
     setUsers(removeState)
 }
 
-const editUser = () => {
-
-}
-
 
 const userItems = user.map(res => res)
 
