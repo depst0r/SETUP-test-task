@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 
 export const EditUsers = () => {
     const { id } = useParams('')
-    const [userEdit, setUserEdit] = useState('')
+    const [userEdit, setUserEdit] = useState({})
 
     useEffect(() => {
         handleLocalStorage()
@@ -12,14 +12,11 @@ export const EditUsers = () => {
 
     const handleLocalStorage = () => {
         const obj = JSON.parse(localStorage.getItem('users'))
-        setUserEdit(obj)
-        const t = obj.map(res => res.id)
-        const res = t.filter(r => r === id)
-        console.log(res)
+        const edit = obj.find(item => item.id == id)
+        setUserEdit(edit)
     }
 
-    return<>
-    
+    return<>    
         <div className="row">
             <div className="form">
             <form>
