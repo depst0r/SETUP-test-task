@@ -1,6 +1,7 @@
 import React, { useState ,useEffect } from 'react'
-import './EditUsers.css'
 import { Link, useParams } from 'react-router-dom'
+import './EditUsers.css'
+
 
 export const EditUsers = () => {
     const { id } = useParams('')
@@ -16,12 +17,16 @@ export const EditUsers = () => {
         setUserEdit(edit)
     }
 
+    const onSubmite = e => {
+        e.preventDefault()
+    }
+
     const { fullName, email, pass, phone, status } = userEdit
 
     return<>    
         <div className="row">
             <div className="form">
-            <form>
+            <form onSubmit={onSubmite}>
             <fieldset disabled>
             <div className="form-group">
                 <label for="exampleInputFullName">Full Name</label>
@@ -47,14 +52,14 @@ export const EditUsers = () => {
                 <option>{status}</option>
             </select>
             </fieldset>
-            <button 
-            type="submit" 
-            class="btn btn-primary m-3"
-            >Save</button>
-            <button 
-            type="submit" 
-            class="btn btn-danger"
-            >
+                <button 
+                    type="submit" 
+                    class="btn btn-primary m-3"
+                    >Save</button>
+                    <button 
+                    type="submit" 
+                    class="btn btn-danger"
+                >
                 <Link to='/users-list' style={{textDecoration: 'none', color: 'white'}}>
                 Back
                 </Link>
