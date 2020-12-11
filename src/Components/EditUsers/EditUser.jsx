@@ -18,14 +18,13 @@ export const EditUsers = () => {
     }
 
     const handlSubmit = () => {
-        localStorage.setItem('users', JSON.stringify([userEdit]))
+        const obj = JSON.parse(localStorage.getItem('users'))
+        localStorage.setItem('users', JSON.stringify([...obj, userEdit]))
     }
 
     const onSubmite = e => {
         e.preventDefault()
     }
-
-    console.log(userEdit);
 
     const { fullName, email, pass, phone, status } = userEdit
 
@@ -82,7 +81,9 @@ export const EditUsers = () => {
                 <button 
                     onClick={handlSubmit}
                     className="btn btn-primary m-3"
-                    >Save</button>
+                    >
+                        Save
+                    </button>
                     <button 
                     type="submit" 
                     className="btn btn-danger"
