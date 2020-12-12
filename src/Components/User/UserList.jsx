@@ -57,7 +57,6 @@ return<>
           <button 
           type="button" 
             className="btn btn-warning"
-            // onClick={editUser} 
             >
                 <Link to={`/user-edit/${res.id}`} style={{textDecoration: 'none', color: 'white'}}>
                     Edit

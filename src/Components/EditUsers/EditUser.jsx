@@ -6,7 +6,7 @@ import './EditUsers.css'
 export const EditUsers = () => {
     const { id } = useParams('')
     const [userEdit, setUserEdit] = useState({})
-    const [test, setTest] = useState({})
+
 
     useEffect(() => {
         handleLocalStorage()
@@ -84,7 +84,9 @@ export const EditUsers = () => {
                     onClick={handlSubmit}
                     className="btn btn-primary m-3"
                     >
+                    <Link to='/users-list' style={{textDecoration: 'none', color: 'white'}}>
                         Save
+                    </Link>
                     </button>
                     <button  
                     className="btn btn-danger"
