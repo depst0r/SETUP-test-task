@@ -19,7 +19,12 @@ export const EditUsers = () => {
 
     const handlSubmit = () => {
         const obj = JSON.parse(localStorage.getItem('users'))
-        localStorage.setItem('users', JSON.stringify([...obj, userEdit]))
+        
+        obj.map((item, index, arr) => {
+            console.log(item);
+            
+        })
+        // localStorage.setItem('users', JSON.stringify(userEdit))
     }
 
     const onSubmite = e => {
