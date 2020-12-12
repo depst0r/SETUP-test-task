@@ -65,7 +65,8 @@ return<>
             </button>
           </td>
           <td>
-            <button type="button" 
+            <button 
+            type="button" 
             className="btn btn-danger" 
             onClick={removeUser}
             >

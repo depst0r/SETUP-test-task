@@ -5,26 +5,23 @@ import './EditUsers.css'
 
 export const EditUsers = () => {
     const { id } = useParams('')
-    const [userEdit, setUserEdit] = useState([])
+    const [userEdit, setUserEdit] = useState({})
+    const [test, setTest] = useState({})
 
     useEffect(() => {
         handleLocalStorage()
     }, [])
 
     const handleLocalStorage = () => {
-        const obj = JSON.parse(localStorage.getItem('users'))
-        const edit = obj.find(item => item.id == id)
-        setUserEdit(edit)
+        const arr = JSON.parse(localStorage.getItem('users'))
+        const obj = arr.find(item => item.id == id)
+        setUserEdit(obj)
     }
 
     const handlSubmit = () => {
-        const obj = JSON.parse(localStorage.getItem('users'))
-        
-        obj.map((item, index, arr) => {
-            console.log(item);
-            
-        })
-        // localStorage.setItem('users', JSON.stringify(userEdit))
+        const allUsersArr = JSON.parse(localStorage.getItem('users'))
+        Object.assign(allUsersArr.find(item => item.id === userEdit.id), userEdit)
+        localStorage.setItem('users', JSON.stringify(allUsersArr))
     }
 
     const onSubmite = e => {
@@ -89,8 +86,7 @@ export const EditUsers = () => {
                     >
                         Save
                     </button>
-                    <button 
-                    type="submit" 
+                    <button  
                     className="btn btn-danger"
                 >
                 <Link to='/users-list' style={{textDecoration: 'none', color: 'white'}}>
