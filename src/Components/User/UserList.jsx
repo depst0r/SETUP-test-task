@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { HomePage } from '../HomePage/HomePage'
 import { Link } from 'react-router-dom'
+import modules from './Users.module.css'
 
 
 export const UserList = () => {
 
 const [user, setUsers] = useState([])
+const [search, setSearch] = useState('')
 
 useEffect(() => {
     handleLocalStorage()
@@ -41,10 +43,17 @@ return<>
       <th scope="col">Password</th>
       <th scope="col">Phone</th>
       <th scope="col">Status</th>
+      <th></th>
+      <th></th>
     </tr>
+    <input 
+    type="text"
+    value={search}
+    onChange={e => setSearch(e.target.value)}
+    />
   </thead>
   <tbody>
-      {userItems ? userItems.map(res => {
+      { userItems.map(res => {
          return (
               <tr key={res.id}>
           <th scope="row">{res.registrationDate}</th>
@@ -74,7 +83,7 @@ return<>
           </td>
           </tr>
          )
-      }) : <HomePage/>}
+      })}
   </tbody>
 </table>
         </>

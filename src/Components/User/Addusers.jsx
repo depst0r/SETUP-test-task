@@ -90,7 +90,7 @@ export const AddUsers = () => {
             value={status}
             onChange={e => setStatus(e.target.value)}
             >
-                <option value=''>Select...</option>
+                <option value='' selected >Select...</option>
                 <option value='Client'>Client</option>
                 <option value='Partner'>Partner</option>
                 <option value='Admin'>Admin</option>
@@ -99,7 +99,9 @@ export const AddUsers = () => {
         <button 
         className="btn btn-primary"
         onClick={onSubmit}
-        >Submit</button>
+        >
+            Submit
+        </button>
         </form>
         </div>
     </>
