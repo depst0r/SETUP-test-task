@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { HomePage } from '../HomePage/HomePage'
 import { Link } from 'react-router-dom'
-import modules from './Users.module.css'
 
 
 export const UserList = () => {
@@ -31,6 +29,10 @@ const removeUser = index => {
 
 const userItems = user.map(res => res)
 
+const testBtn = () => {
+
+}
+
 return<>
     <div className="row">
         <>
@@ -51,6 +53,9 @@ return<>
     value={search}
     onChange={e => setSearch(e.target.value)}
     />
+    <button
+    onClick={testBtn}
+    >test</button>
   </thead>
   <tbody>
       { userItems.map(res => {
